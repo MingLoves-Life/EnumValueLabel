@@ -1,15 +1,18 @@
-import { createEnum } from "./createEnum";
-import type { CreateEnumReturn } from "./createEnum";
-import { EnumConfig } from "./types";
+import { createEnum } from "./utils/createEnum";
+import { addGetLabel } from "./utils/addGetLabel";
+import type { CreateEnumReturn } from "./utils/createEnum";
+import type { EnumConfig } from "./types";
 
-export type EnumValueLabelReturn<T> = CreateEnumReturn<T>;
+export type EnumValueLabelReturn<T> = CreateEnumReturn<T> & {
+  label: ReturnType<typeof addGetLabel<T>>;
+};
 
 export function EnumValueLabel<T>(
   enumConfig: T extends EnumConfig ? T : never
 ): EnumValueLabelReturn<T> {
   const newEnum = createEnum<T>(enumConfig);
-  console.log(newEnum);
-  return newEnum;
+  addGetLabel<T>(enumConfig, newEnum);
+  return newEnum as EnumValueLabelReturn<T>;
 }
 
 const obj = {
@@ -20,3 +23,5 @@ const obj = {
 } as const;
 
 const testEnum1 = EnumValueLabel<typeof obj>(obj);
+const res = testEnum1.label("EXPERT");
+console.log(res);
