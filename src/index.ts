@@ -4,7 +4,7 @@ import type { CreateEnumReturn } from "./utils/createEnum";
 import type { EnumConfig } from "./types";
 
 export type EnumValueLabelReturn<T> = CreateEnumReturn<T> & {
-  label: ReturnType<typeof addGetLabel<T>>;
+  _label: ReturnType<typeof addGetLabel<T>>;
 };
 
 export function EnumValueLabel<T>(
@@ -16,12 +16,13 @@ export function EnumValueLabel<T>(
 }
 
 const obj = {
-  STUDENT: [1, "学生"],
+  STUDENT: [1, { zh: "学生" }],
   EXPERT: [2, "专家"],
   LECTURER: [3, "主讲"],
   HEAD_TEACHER: [4, "班主任"],
 } as const;
 
-const testEnum1 = EnumValueLabel<typeof obj>(obj);
-const res = testEnum1.label("EXPERT");
+const testEnum = EnumValueLabel<typeof obj>(obj);
+const res = testEnum._label(1);
+console.log(testEnum);
 console.log(res);
