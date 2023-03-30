@@ -12,9 +12,9 @@
   ],
   "scripts": {
     "type": "tsc",
-    "test": "vitest",
+    "test": "vitest run",
     "build": "npm run type && rollup --config --bundleConfigAsCjs",
-    "prerelease": "vitest && npm run build && npm version patch",
+    "prerelease": "npm run test && npm run build && npm version patch",
     "release": "npm publish"
   },
   "repository": {

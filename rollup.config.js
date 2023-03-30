@@ -3,8 +3,6 @@ import dts from "rollup-plugin-dts";
 import del from "rollup-plugin-delete";
 import pkg from "./package.json";
 
-console.log(dts.default);
-
 export default [
   {
     input: "src/index.ts",
