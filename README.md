@@ -121,7 +121,7 @@
 
     // _array 和 _a 二者效果相同, 不再演示
    ```
-      支持TS推导
+   支持TS推导
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray1.png)
 
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray2.png)
