@@ -1,16 +1,27 @@
 {
   "name": "enumvaluelabel",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Enum/Value/Label Management Tools Package(枚举管理工具包)",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "umd": "./dist/index.umd.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "test": "vitest"
+    "type": "tsc",
+    "test": "vitest",
+    "build": "npm run type && rollup --config --bundleConfigAsCjs",
+    "prerelease": "vitest && npm run build && npm version patch",
+    "release": "npm publish"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MingLoves-Life/EnumValueLabel.git"
   },
-  "author": "",
+  "author": "wuhaoming",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MingLoves-Life/EnumValueLabel/issues"
@@ -25,6 +36,10 @@
     "eslint-plugin-prettier": "^4.2.1",
     "prettier": "^2.8.7",
     "prettier-eslint": "^15.0.1",
+    "rollup": "^3.20.2",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-typescript": "^1.0.1",
     "vitest": "^0.29.8"
   }
 }
