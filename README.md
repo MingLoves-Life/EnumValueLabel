@@ -45,7 +45,7 @@
   
    约定：
    1. 传入对象的key为原枚举的key
-   2. 传入对象的value为一个有两项的数组，第一项为原枚举的value，第二项为原映射的value
+   2. 传入对象的value是一个**有且仅有两项**的数组，第一项为原枚举的value，第二项为原映射的value
    
     ``` typescript
     import { EnumValueLabel } from 'enum-value-label';
@@ -61,9 +61,11 @@
     console.log(userTypeEnum[2])         // EXPERT
     console.log(userTypeEnum.LECTURER)  // 3
    ```
+   支持TS推导
+   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabel.png)
 3. 内置方法 `_label` / `_l`
    
-   参数：传入对象的 `key` 或 `value` 的第一项
+   参数：传入对象的 `key` 或 `value的第一项`
    > `_label` 和 `_l` 二者效果相同, 仅是缩写关系
 
     ``` typescript
@@ -77,11 +79,15 @@
     } as const); // 使用 as const 用以强调类型
 
     console.log(userTypeEnum._label(1))  // '学生'
-    console.log(userTypeEnum._label(3))  // { zh: '主讲', en: 'lecturer' }
+    console.log(userTypeEnum._label("LECTURER"))  // { zh: '主讲', en: 'lecturer' }
 
     console.log(userTypeEnum._l(1))  // '学生'
-    console.log(userTypeEnum._l(3))  // { zh: '主讲', en: 'lecturer' }
+    console.log(userTypeEnum._l("LECTURER"))  // { zh: '主讲', en: 'lecturer' }
    ```
+    支持TS推导
+   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabellabel1.png)
+   
+   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabellabel2.png)
 4. 内置方法 `_array` / `_a`
 
    参数：期望生成的对象数组中对象的`key`，传入顺序分别对应原对象value的`第一项`和`第二项`
@@ -115,3 +121,9 @@
 
     // _array 和 _a 二者效果相同, 不再演示
    ```
+      支持TS推导
+   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray1.png)
+
+   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray2.png)
+## 未来
+如有希望支持的功能和想法可联系作者共同讨论
