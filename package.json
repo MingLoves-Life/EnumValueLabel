@@ -1,5 +1,5 @@
 {
-  "name": "enumvaluelabel",
+  "name": "enum-value-label",
   "version": "1.0.1",
   "description": "Enum/Value/Label Management Tools Package(枚举管理工具包)",
   "main": "./dist/index.js",
@@ -9,6 +9,13 @@
   "files": [
     "dist",
     "src"
+  ],
+  "keywords": [
+    "enum",
+    "value",
+    "label",
+    "map",
+    "converter"
   ],
   "scripts": {
     "type": "tsc",
