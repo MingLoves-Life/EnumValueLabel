@@ -1,6 +1,6 @@
 {
   "name": "enum-value-label",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Enum/Value/Label Management Tools Package(枚举管理工具包)",
   "main": "./dist/index.js",
   "module": "./dist/index.esm.js",
