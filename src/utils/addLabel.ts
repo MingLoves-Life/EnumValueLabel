@@ -1,4 +1,3 @@
-import type { CreateEnumReturn } from "./createEnum";
 import type { EnumConfig, FirstValue, SecondLabel } from "../types";
 
 type KeyOrValue<T> = keyof T | { [P in keyof T]: FirstValue<T[P]> }[keyof T];
@@ -9,10 +8,7 @@ type LabelReturn<T, K> = K extends keyof T
       [P in keyof T]: FirstValue<T[P]> extends K ? SecondLabel<T[P]> : never;
     }[keyof T];
 
-export const addLabel = <T extends EnumConfig>(
-  enumConfig: EnumConfig,
-  enumItem: CreateEnumReturn<T>
-) => {
+export const addLabel = <T extends EnumConfig>(enumConfig: EnumConfig) => {
   const _label = (keyOrValue: KeyOrValue<T>): LabelReturn<T, KeyOrValue<T>> => {
     const keys = Object.keys(enumConfig);
     if (keys.includes(String(keyOrValue))) {
@@ -23,6 +19,5 @@ export const addLabel = <T extends EnumConfig>(
     }
   };
 
-  Object.setPrototypeOf(enumItem, { _label });
   return _label;
 };
