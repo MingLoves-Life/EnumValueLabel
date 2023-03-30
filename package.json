@@ -22,7 +22,8 @@
     "test": "vitest run",
     "build": "npm run type && rollup --config --bundleConfigAsCjs",
     "prerelease": "npm run test && npm run build && npm version patch",
-    "release": "npm publish"
+    "release": "npm publish",
+    "postrelease": "git push"
   },
   "repository": {
     "type": "git",
