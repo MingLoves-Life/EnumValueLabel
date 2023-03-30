@@ -1,28 +1,33 @@
 import { createEnum } from "./utils/createEnum";
-import { addGetLabel } from "./utils/addGetLabel";
+import { addLabel } from "./utils/addLabel";
+import { addFormat } from "./utils/addFormat";
 import type { CreateEnumReturn } from "./utils/createEnum";
 import type { EnumConfig } from "./types";
 
-export type EnumValueLabelReturn<T> = CreateEnumReturn<T> & {
-  _label: ReturnType<typeof addGetLabel<T>>;
+export type EnumValueLabelReturn<T extends EnumConfig> = CreateEnumReturn<T> & {
+  _label: ReturnType<typeof addLabel<T>>;
+  _format: ReturnType<typeof addFormat<T>>;
 };
 
-export function EnumValueLabel<T>(
-  enumConfig: T extends EnumConfig ? T : never
+export function EnumValueLabel<T extends EnumConfig>(
+  enumConfig: T
 ): EnumValueLabelReturn<T> {
   const newEnum = createEnum<T>(enumConfig);
-  addGetLabel<T>(enumConfig, newEnum);
+  addLabel<T>(enumConfig, newEnum);
+  addFormat<T>(enumConfig, newEnum);
   return newEnum as EnumValueLabelReturn<T>;
 }
 
-const obj = {
+const testEnum = EnumValueLabel({
   STUDENT: [1, { zh: "学生" }],
   EXPERT: [2, "专家"],
   LECTURER: [3, "主讲"],
   HEAD_TEACHER: [4, "班主任"],
-} as const;
+} as const);
 
-const testEnum = EnumValueLabel<typeof obj>(obj);
-const res = testEnum._label(1);
+const label = testEnum._label("EXPERT");
+const format = testEnum._format("id", "name");
+
 console.log(testEnum);
-console.log(res);
+console.log(label);
+console.log(format[0]);
