@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",  
+    "module": "commonjs",
+    "declaration": true,
+    "declarationDir": "./dist/dts",
+    "emitDeclarationOnly": true, 
+    "outDir": "./dist", 
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "skipLibCheck": true,
+    "lib": [ 
+      "es5",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018",
+      "dom"
+    ]
+  },
+  "exclude": ["test/**"]
+}
