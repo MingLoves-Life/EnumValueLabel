@@ -4,6 +4,7 @@
 * 支持Enum、Value获取Label
 * 支持Value、Label转换成数组
 * 支持TS，全属性自动推导
+* 已通过单测冒烟
 
 ## 为什么使用EnumValueLabel
 在日常开发中会大量出现以下情况
@@ -62,6 +63,7 @@
     console.log(userTypeEnum.LECTURER)  // 3
    ```
    支持TS推导
+
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabel.png)
 3. 内置方法 `_label` / `_l`
    
@@ -85,6 +87,7 @@
     console.log(userTypeEnum._l("LECTURER"))  // { zh: '主讲', en: 'lecturer' }
    ```
     支持TS推导
+
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabellabel1.png)
    
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabellabel2.png)
@@ -122,6 +125,7 @@
     // _array 和 _a 二者效果相同, 不再演示
    ```
     支持TS推导
+
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray1.png)
 
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray2.png)
