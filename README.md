@@ -6,7 +6,7 @@
 * 支持TS，全属性自动推导
 * 已通过单测冒烟
 
-## 为什么使用EnumValueLabel
+## 为什么使用EnumValueLabel / Why use EnumValueLabel
 在日常开发中会大量出现以下情况
 1. 首先创建枚举
    ``` typescript
@@ -129,5 +129,39 @@
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray1.png)
 
    ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray2.png)
+
+5. 内置方法 `_format` / `_f`
+   
+   参数：一个方法用于处理每一项的`value` 即方法的两个参数分别为原对象value的`第一项`和`第二项` 详看下面事例
+
+   > `_format` 和 `_f` 二者效果相同, 仅是缩写关系
+
+    ``` typescript
+    import { EnumValueLabel } from 'enum-value-label';
+
+    const userTypeEnum = EnumValueLabel({
+        STUDENT: [1, '学生'],
+        EXPERT: [2, '专家'],
+        LECTURER: [3, { zh: '主讲', en: 'lecturer' }],
+        HEAD_TEACHER: [4, '班主任']
+    } as const); // 使用 as const 用以强调类型
+
+    const testFn = (value, label) => ({ value: label, label: value });
+
+    console.log(userTypeEnum._format(testFn)) 
+
+    // [
+    //   { value: '学生', label: 1 },
+    //   { value: '专家', label: 2 },
+    //   { value: { zh: '主讲', en: 'lecturer' }, label: 3 },
+    //   { value: '班主任', label: 4 }
+    // ]
+
+    // _format 和 _f 二者效果相同, 不再演示
+   ```
+    支持TS推导
+
+   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelformat1.png)
+   
 ## 未来
 如有希望支持的功能和想法可联系作者共同讨论
