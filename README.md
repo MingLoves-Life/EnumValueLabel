@@ -1,4 +1,10 @@
-# EnumValueLabel
+# 
+<p align="center">
+<img src="https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/evl/new-logo.png" alt="Enum/Value/Label Management Tools Package" width="300">
+<br>
+</p>
+<p align="center" style="font-size: 25px">Enum/Value/Label Management Tools Package</p>
+
 ## Features
 * 支持Enum、Value互相转换
 * 支持Enum、Value获取Label
@@ -63,8 +69,9 @@
     console.log(userTypeEnum.LECTURER)  // 3
    ```
    支持TS推导
+   <br/>
+   <img src="https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabel.png" alt="Enum/Value/Label Management Tools Package" width="600">
 
-   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabel.png)
 3. 内置方法 `_label` / `_l`
    
    参数：传入对象的 `key` 或 `value的第一项`
@@ -88,9 +95,11 @@
    ```
     支持TS推导
 
-   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabellabel1.png)
-   
-   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabellabel2.png)
+   <br/>
+   <img src="https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabellabel1.png" alt="Enum/Value/Label Management Tools Package" width="600">
+   <br/>
+   <img src="https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabellabel2.png" alt="Enum/Value/Label Management Tools Package" width="600">
+
 4. 内置方法 `_array` / `_a`
 
    参数：期望生成的对象数组中对象的`key`，传入顺序分别对应原对象value的`第一项`和`第二项`
@@ -125,10 +134,10 @@
     // _array 和 _a 二者效果相同, 不再演示
    ```
     支持TS推导
-
-   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray1.png)
-
-   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray2.png)
+   <br/>
+   <img src="https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray1.png" alt="Enum/Value/Label Management Tools Package" width="600">
+   <br/>
+   <img src="https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelarray2.png" alt="Enum/Value/Label Management Tools Package" width="600">
 
 5. 内置方法 `_format` / `_f`
    
@@ -160,8 +169,8 @@
     // _format 和 _f 二者效果相同, 不再演示
    ```
     支持TS推导
-
-   ![支持TS推导](https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelformat1.png)
+   <br/>
+   <img src="https://cdn.jsdelivr.net/gh/MingLoves-Life/static@master/enumvaluelabelformat1.png" alt="Enum/Value/Label Management Tools Package" width="600">
    
 ## 未来
 如有希望支持的功能和想法可联系作者共同讨论
